@@ -10,7 +10,7 @@ GAME RULES:
 */
 
 
-let scores, roundScore, activePlayer,gamePlaying ;
+let scores, roundScore, activePlayer, gamePlaying;
 
 init()
 // scores = [0,0];
@@ -28,14 +28,14 @@ init()
 // console.log(x);
 //setter ^
 
-// document.querySelector('.dice').style.display = 'none';
+document.querySelector('.dice').style.display = 'none';
 
 // document.getElementById('score-0').textContent = '0';
 // document.getElementById('score-1').textContent = '0';
 // document.getElementById('current-0').textContent = '0';
 // document.getElementById('current-1').textContent = '0';
 
-document.querySelector('.btn-roll').addEventListener('click', function (){
+document.querySelector('.btn-roll').addEventListener('click', function() {
 
     if(gamePlaying) {
 
@@ -45,6 +45,8 @@ document.querySelector('.btn-roll').addEventListener('click', function (){
         let diceDOM = document.querySelector('.dice');
         diceDOM.style.display = 'block';
         diceDOM.src = 'dice-' + dice + '.png';
+
+ 
         //img src
         //3 Update the round score IF the rolled number was NOt a 1
         if (dice !== 1) {
@@ -59,10 +61,9 @@ document.querySelector('.btn-roll').addEventListener('click', function (){
         }
     }
     
- 
 });
 
-document.querySelector('.btn-hold').addEventListener('click', function(){
+document.querySelector('.btn-hold').addEventListener('click', function() {
     if(gamePlaying){
         // add Current score to global score 
         scores[activePlayer] += roundScore;
@@ -113,6 +114,7 @@ function init(){
     scores = [0, 0];
     activePlayer = 0;
     roundScore = 0;
+    gamePlaying = true;
 
     document.querySelector('.dice').style.display = 'none';
 
@@ -133,3 +135,5 @@ function init(){
     
     
 }
+
+
