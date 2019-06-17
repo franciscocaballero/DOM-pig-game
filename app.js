@@ -14,6 +14,9 @@ let scores, roundScore, activePlayer, gamePlaying;
 
 let previousRoll;
 
+
+let winningScore;
+
 init()
 // scores = [0,0];
 // roundScore = 0;
@@ -82,7 +85,7 @@ document.querySelector('.btn-hold').addEventListener('click', function () {
         document.querySelector('#score-' + activePlayer).textContent = scores[activePlayer];
 
         //Check if player won the game
-        if (scores[activePlayer] >= 10) {
+        if (scores[activePlayer] >= winningScore) {
             document.querySelector('#name-' + activePlayer).textContent = 'Winner!';
 
             document.querySelector('.dice').style.display = 'none';
@@ -144,3 +147,13 @@ function init() {
 
 
 }
+
+// let input = document.getElementById("#userinput");
+// console.log(input);
+
+function clicked() {
+    var input_value = document.getElementById('data').value;
+    winningScore = document.getElementById('display').innerHTML = input_value;
+}
+
+document.getElementById('btn').addEventListener('click', clicked);;
